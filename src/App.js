@@ -1,24 +1,29 @@
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import data from './data';
+import './index.css';
+import TaskList from './TaskList';
+
 function App() {
+  const [tasks, setTasks] = useState(data);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      
+      <main>
+
+        <section className='container'>
+          <h1>To Do List</h1>
+          <h3>{tasks.length} Tasks Remaining</h3>
+          <TaskList tasks={tasks} />
+          <button className='list-btn' onClick={() => setTasks([])}>Clear Tasks</button>
+        </section>
+        
+      </main>
+      
+    </>
   );
 }
 
