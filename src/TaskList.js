@@ -10,7 +10,7 @@ const TaskList = ({tasks}) => {
                     <article key={id} className="task">
                         <div className='task-info'>
                             <h4>{task_name}</h4>
-                            <button >Clear</button>
+                            {/* <button >Clear</button> */}
                         </div>
                     </article>
                 );
